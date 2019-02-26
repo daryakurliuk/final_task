@@ -1,0 +1,138 @@
+﻿ID: gym
+_schema-version: 2.1
+version: 0.0.4
+parameters:
+    deploy_mode: html5-repo
+modules:
+    -
+        name: db
+        type: hdb
+        path: db
+        requires:
+            - {name: pt_hdi}
+        provides:
+            - {name: pt_db}
+        parameters:
+            memory: 128M
+            disk_quota: 128M
+    -
+        name: service
+        type: nodejs
+        path: service
+        requires:
+            - {name: pt_db}
+            - {name: pt_hdi}
+            - {name: pt_uaa}
+        provides:
+            - {name: pt_service, properties: {url: '${default-url}'}}
+        parameters:
+            memory: 128M
+            disk_quota: 128M
+#    -
+#        name: flp
+#        type: com.sap.portal.site-content
+#        path: flp
+#        parameters:
+#            memory: 128M
+#            buildpack: 'https://github.com/cloudfoundry/nodejs-buildpack/releases/download/v1.6.21/nodejs-buildpack-v1.6.21.zip'
+#        requires:
+#            - {name: pt_portal}
+#            - {name: pt_uaa}
+#            - {name: pt_deployer}
+#            - {name: deployer}
+    -
+        name: user_create
+        type: html5
+        path: web/user_create
+        parameters:
+            disk-quota: 256M
+            memory: 256M
+        build-parameters:
+            builder: grunt
+        requires:
+            - {name: pt_uaa}
+    -
+        name: gym_display
+        type: html5
+        path: web/gym_display
+        parameters:
+            disk-quota: 256M
+            memory: 256M
+        build-parameters:
+            builder: grunt
+        requires:
+            - {name: pt_uaa}
+    -
+        name: router
+        type: nodejs
+        path: router
+        parameters:
+            disk-quota: 256M
+            memory: 128M
+        properties:
+            XS_APP_LOG_LEVEL: debug
+        requires:
+            - {name: pt_dest}
+            - {name: pt_conn}
+            - {name: pt_uaa}
+            - {name: pt_router}
+#            - {name: pt_portal}
+            - {name: pt_service, group: destinations, properties: {name: pt_service, url: '~{url}', forwardAuthToken: true}}
+    -
+        name: deployer
+        type: com.sap.html5.application-content
+        path: deployer
+        requires:
+            - {name: pt_deployer}
+        build-parameters:
+            requires: [{name: user_create, artifacts: ['./*'], target-path: resources/user_create},{name: gym_display, artifacts: ['./*'], target-path: resources/gym_display}]
+        parameters:
+            disk-quota: 256M
+            memory: 128M
+resources:
+#    -   name: pt_portal
+#        parameters:
+#           service-plan: standard
+#           service: portal
+#        type: org.cloudfoundry.managed-service
+    -
+        name: pt_uaa
+        parameters:
+            path: ./xs-security.json
+            service-plan: application
+            service: xsuaa
+        type: org.cloudfoundry.managed-service
+    -
+        name: pt_hdi
+        parameters:
+            service-plan: hdi-shared
+            service: hanatrial
+            config: {schema: DKFINALTASK}
+        properties:
+            hdi-container-name: '${service-name}'
+        type: com.sap.xs.hdi-container
+    -
+        name: pt_deployer
+        parameters:
+            service-plan: app-host
+            service: html5-apps-repo
+            config: {sizeLimit: 1}
+        type: org.cloudfoundry.managed-service
+    -
+        name: pt_router
+        parameters:
+            service-plan: app-runtime
+            service: html5-apps-repo
+        type: org.cloudfoundry.managed-service
+    -
+        name: pt_conn
+        type: org.cloudfoundry.managed-service
+        parameters:
+            service: connectivity
+            service-plan: lite
+    -
+        name: pt_dest
+        type: org.cloudfoundry.managed-service
+        parameters:
+            service: destination
+            service-plan: lite

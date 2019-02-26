@@ -1,0 +1,108 @@
+{
+    "resources": [
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "controller\\App-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller\\App.controller.js"
+        },
+        {
+            "name": "controller\\Create-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller\\Create.controller.js"
+        },
+        {
+            "name": "css\\style-dbg.css",
+            "isDebug": true
+        },
+        {
+            "name": "css\\style.css"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "fragment\\ConfirmDeleteDialog.fragment.xml"
+        },
+        {
+            "name": "i18n\\i18n.properties",
+            "raw": "i18n\\i18n.properties"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "tmp\\Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "tmp\\Component.js"
+        },
+        {
+            "name": "tmp\\controller\\App.controller.js"
+        },
+        {
+            "name": "tmp\\controller\\Create.controller.js"
+        },
+        {
+            "name": "tmp\\css\\style.css"
+        },
+        {
+            "name": "tmp\\fragment\\ConfirmDeleteDialog.fragment.xml"
+        },
+        {
+            "name": "tmp\\i18n\\i18n.properties",
+            "raw": "i18n\\i18n.properties"
+        },
+        {
+            "name": "tmp\\index.html"
+        },
+        {
+            "name": "tmp\\manifest.json"
+        },
+        {
+            "name": "tmp\\view\\App.view.xml"
+        },
+        {
+            "name": "tmp\\view\\user_create.view.xml"
+        },
+        {
+            "name": "tmp-dbg\\Component.js"
+        },
+        {
+            "name": "tmp-dbg\\controller\\App.controller.js"
+        },
+        {
+            "name": "tmp-dbg\\controller\\Create.controller.js"
+        },
+        {
+            "name": "tmp-dbg\\css\\style.css"
+        },
+        {
+            "name": "view\\App.view.xml"
+        },
+        {
+            "name": "view\\user_create.view.xml"
+        },
+        {
+            "name": "xs-app.json"
+        }
+    ]
+}

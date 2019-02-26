@@ -1,0 +1,67 @@
+<mvc:View controllerName="gym_display.controller.display" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc">
+	<Shell>
+		<App id="home">
+			<Page title="GYM DISPLAY">
+				<Panel>
+					<Input id="input_name" width="20%"/>
+					<Input id="input_type" width="20%"/>
+					<Input id="input_trainer" width="20%"/>
+					<Button text="Update" press="updateGym" />
+					<Button text="Create" press="createGym" />
+				</Panel>
+				<Panel class="sapUiResponsiveMargin" width="auto">
+					<content>						
+						<Table id="gymsTable" items="{
+										path: 'gyms>/gyms'
+									}"
+									mode="SingleSelect">
+							<columns>
+								<Column id="idColumn" width="10%">
+									<Text text="ID" />
+								</Column>
+								<Column id="nameColumn" width="10%">
+									<Text text="Name" />
+								</Column>
+								<Column id="typeColumn" width="10%">
+									<Text text="Type" />
+								</Column>
+								<Column id="trainerColumn" width="10%">
+									<Text text="Trainer" />
+								</Column>
+								<Column id="createDate" width="40%">
+									<Text text="Creation Date" />
+								</Column>
+								<Column id="updateDate" width="40%">
+									<Text text="Update Date" />
+								</Column>												
+							</columns>
+							<items>
+								<ColumnListItem
+									id="row">
+									<cells>
+										<Label text="{gyms>usid}" />
+									</cells>
+									<cells>
+										<Label text="{gyms>name}" />
+									</cells>
+									<cells>
+										<Label text="{gyms>type}" />
+									</cells>
+									<cells>
+										<Label text="{gyms>trainer}" />
+									</cells>
+									<cells>
+										<Label text="{gyms>creationDate}" />
+									</cells>
+									<cells>
+										<Label text="{gyms>updateDate}" />
+									</cells>																									
+								</ColumnListItem>
+							</items>
+						</Table>	
+					</content>
+				</Panel>
+			</Page>
+		</App>
+	</Shell>
+</mvc:View>

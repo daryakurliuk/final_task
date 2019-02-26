@@ -1,0 +1,93 @@
+{
+    "resources": [
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "controller\\display-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller\\display.controller.js"
+        },
+        {
+            "name": "css\\style-dbg.css",
+            "isDebug": true
+        },
+        {
+            "name": "css\\style.css"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "i18n\\i18n.properties",
+            "raw": "i18n\\i18n.properties"
+        },
+        {
+            "name": "i18n\\i18n_en_US.properties",
+            "raw": "i18n\\i18n.properties",
+            "locale": "_en_US"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "tmp\\Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "tmp\\Component.js"
+        },
+        {
+            "name": "tmp\\controller\\display.controller.js"
+        },
+        {
+            "name": "tmp\\css\\style.css"
+        },
+        {
+            "name": "tmp\\i18n\\i18n.properties",
+            "raw": "i18n\\i18n.properties"
+        },
+        {
+            "name": "tmp\\i18n\\i18n_en_US.properties",
+            "raw": "i18n\\i18n.properties",
+            "locale": "_en_US"
+        },
+        {
+            "name": "tmp\\index.html"
+        },
+        {
+            "name": "tmp\\manifest.json"
+        },
+        {
+            "name": "tmp\\view\\display.view.xml"
+        },
+        {
+            "name": "tmp-dbg\\Component.js"
+        },
+        {
+            "name": "tmp-dbg\\controller\\display.controller.js"
+        },
+        {
+            "name": "tmp-dbg\\css\\style.css"
+        },
+        {
+            "name": "view\\display.view.xml"
+        },
+        {
+            "name": "xs-app.json"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+<mvc:View controllerName="user_create.controller.Create" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc">
+	<Shell>
+		<App>
+			<Page
+				title="USER_CREATE">
+				<Panel class="sapUiResponsiveMargin" width="auto">
+					<content>
+						<Label text="Name" class="sapUiSmallMargin" />
+      					<Input id="input_name" width="200px" />	
+						<Button text="Create" press=".createUser"/>		
+					</content>
+				</Panel>
+			</Page>
+		</App>
+	</Shell>
+</mvc:View>

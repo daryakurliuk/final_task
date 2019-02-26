@@ -1,0 +1,20 @@
+namespace HiMTA;
+
+using HiMTA::ExtraInfo.Price;
+
+entity Gym {
+    @Comment: 'Id of User'
+    key usid : String(4);
+    @Comment: 'Name'
+    name : String(100);
+	@Comment: 'Type'
+    type : String(100);
+	@Comment: 'Trainer'
+    trainer : String(100);
+    @Comment: 'Update time'
+    creationDate : UTCDateTime;
+    @Comment: 'Date of Update'
+    updateDate : UTCDateTime;
+    
+    toPrice : Association[1] to Price on toPrice.usid = usid;
+};

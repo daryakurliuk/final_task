@@ -1,0 +1,19 @@
+service namespace "HiMTA"{
+
+    "HiMTA::Gym" as "Gym"
+            navigates("Gym_2_Price" as "toPrice")
+             create using "xsjs.gym:gymsCrud.xsjslib::GymsCreate"
+             update using "xsjs.gym:gymsCrud.xsjslib::GymsUpdate"
+            delete forbidden;
+
+    "HiMTA::ExtraInfo.Price" as "Price"
+            create forbidden
+            update forbidden
+            delete forbidden;
+
+
+    association "Gym_2_Price" principal "Gym"("usid")
+            multiplicity "1" dependent "Price"("usid") multiplicity "1";
+
+    
+}

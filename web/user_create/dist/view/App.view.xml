@@ -1,0 +1,9 @@
+<mvc:View
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	controllerName="user_create.controller.App"
+	displayBlock="true">
+	<App id="app" busyIndicatorDelay="0">
+	     <Button text="POST" press="sendPost" />
+  </App>
+</mvc:View>

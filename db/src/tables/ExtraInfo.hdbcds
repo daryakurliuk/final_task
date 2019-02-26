@@ -1,0 +1,18 @@
+﻿namespace HiMTA;
+using HiMTA::Gym;
+
+context ExtraInfo{
+
+entity Price {
+    @Comment: 'Id of Price'
+    key adid : String(4);
+    @Comment: 'Gym for Price'
+    usid : String(4);
+    @Comment: 'Count of hours in gym'
+    time : String(100);
+    @Comment: 'Price'
+    price : Integer;
+    
+};
+
+};
